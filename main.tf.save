@@ -1,0 +1,4 @@
+resource "aws_iam_user" "demo" {
+  count = 4
+  name = "aelion2310.0${count.index}"
+}

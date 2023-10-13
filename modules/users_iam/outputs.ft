@@ -1,0 +1,16 @@
+# Output access keys and secret keys for each user
+output "access_keys" {
+  value = {
+    for user_name, user in aws_iam_user.iam_users :
+    user_name => aws_iam_access_key.access_keys[user_name].id
+  }
+  sensitive = true
+}
+
+output "secret_keys" {
+  value = {
+    for user_name, user in aws_iam_user.iam_users :
+    user_name => aws_iam_access_key.access_keys[user_name].secret
+  }
+  sensitive = true
+}
