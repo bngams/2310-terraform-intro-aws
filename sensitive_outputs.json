@@ -1,0 +1,66 @@
+{
+  "access_keys_from_module": {
+    "sensitive": true,
+    "type": [
+      "object",
+      {
+        "aelion2310.01": [
+          "object",
+          {
+            "access_key_id": "string",
+            "secret_key": "string"
+          }
+        ],
+        "aelion2310.02": [
+          "object",
+          {
+            "access_key_id": "string",
+            "secret_key": "string"
+          }
+        ],
+        "aelion2310.03": [
+          "object",
+          {
+            "access_key_id": "string",
+            "secret_key": "string"
+          }
+        ],
+        "aelion2310.04": [
+          "object",
+          {
+            "access_key_id": "string",
+            "secret_key": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "aelion2310.01": {
+        "access_key_id": "AKIA4PB7FO6UNXLNQSNV",
+        "secret_key": "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"
+      },
+      "aelion2310.02": {
+        "access_key_id": "AKIA4PB7FO6UMMU55UPQ",
+        "secret_key": "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"
+      },
+      "aelion2310.03": {
+        "access_key_id": "AKIA4PB7FO6UOBQ445GA",
+        "secret_key": "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"
+      },
+      "aelion2310.04": {
+        "access_key_id": "AKIA4PB7FO6UIUWLEXTJ",
+        "secret_key": "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"
+      }
+    }
+  },
+  "website_from_module_dyn_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "aelionmystaticwebsite2312nb.s3.eu-central-1.amazonaws.com"
+  },
+  "website_from_module_manual_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://aelionmystaticwebsite2312nb.s3-website.eu-central-1.amazonaws.com"
+  }
+}

@@ -1,23 +1,12 @@
 # call domain modules which handle users
-module "users_iam" {
-  source = "./modules/users_iam"
+module "users" {
+  source = "./modules/iam_users"
+  user_names = ["aelion2310.01", "aelion2310.02", "aelion2310.03", "aelion2310.04"]
 }
 
-
-# test bucket manually
-resource "aws_s3_bucket" "example" {
-  bucket = "aelion-terraform-2310-test-bucket"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
-
-# use modue to create buckets instead
+# use module to create buckets instead
 module "s3" {
-  source = "./modules/storage_instances"
-  
+  source = "./modules/s3_instances"
   buckets = [
     {
       bucket_name = "aelion-terraform-2310-dynbucket1-${var.env_name}"
@@ -31,3 +20,18 @@ module "s3" {
     }
   ]
 }
+
+module "s3_website" {
+  source = "./modules/s3_website"
+  region = var.aws_region
+  bucket_name = "aelionmystaticwebsite2312nb"
+} 
+
+# Use outputs from the users_iam module
+output "website_from_module_manual_url" {
+  value = module.s3_website.website_url_manual
+}
+output "website_from_module_dyn_url" {
+  value = module.s3_website.website_url
+}
+

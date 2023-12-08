@@ -1,9 +1,8 @@
 # create my buckets manually 
 resource "aws_s3_bucket" "s3" {
   bucket = "aelion-terraform-2310-eu-central-01"
-
   tags = {
-    Name        = "My S3 bucket ${var.some_override != "" ?  var.some_override : "empty"}"
+    Name        = "My S3 bucket ${var.manual_s3_bucket_name != "" ?  var.manual_s3_bucket_name : "empty"}"
     Environment = var.env_name
   }
 }

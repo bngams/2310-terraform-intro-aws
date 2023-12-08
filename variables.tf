@@ -3,7 +3,7 @@ variable "env_name" {
   type = string
 }
 
-variable "some_override" {
+variable "manual_s3_bucket_name" {
   description = "Some var override / context testing"
   type = string
 }
